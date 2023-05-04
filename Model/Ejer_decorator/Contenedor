@@ -14,4 +14,4 @@ class Contenedor(ElementoMapa):
         self.hijos.append(unEM)
     
     def entrar(self):
-        return print('Contenedor')
+        raise NotImplementedError("Subclase debe implementar este metodo.")

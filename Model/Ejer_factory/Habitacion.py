@@ -14,19 +14,19 @@ class Habitacion(ElementoMapa):
     def entrar(self):
         print('Estas en la habitacion', str(self.num))
 
-    def este():
-        global este
-        return este
+    #def get_este():
+    #    global este
+     #   return este
     
 
-    def norte():
-        global norte
-        return norte
+    #def get_norte():
+   #     global norte
+    #    return norte
     
-    def sur():
-        global sur
-        return sur
+   # def get_sur():
+    #    global sur
+    #    return sur
     
-    def oeste():
-        global oeste
-        return oeste
+   # def get_oeste():
+    #    global oeste
+    #    return oeste

@@ -1,0 +1,11 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+
+from Contenedor import Contenedor
+
+class Decorator(Contenedor):
+    def __init__(self):
+        self.component=None
+    
+    def entrar(self):
+        return self.component.entrar()

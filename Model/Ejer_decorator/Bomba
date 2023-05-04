@@ -1,0 +1,23 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+
+from Decorator import Decorator
+
+class Bomba(Decorator):
+    def __init__(self):
+        self.activa=False
+    
+    def entrar(self):
+        if self.activa:
+            print('La bomba ha explotado')
+        else:
+            #Preguntar
+            self.component.entrar(self)
+
+    def activar(self):
+        self.activa=True
+        print('La bomba ha sido activada')
+
+    def desactivar(self):
+        self.activa=False
+        print('La bomba ha sido desactivada')
