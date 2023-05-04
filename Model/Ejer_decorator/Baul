@@ -1,0 +1,13 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+
+from Contenedor import Contenedor
+
+class Baul(Contenedor):
+    def __init__(self):
+        #Cambiar a Falso --> llave
+        self.abierto=True
+        #Numero?
+
+    def entrar(self):
+        print('Estas en un baul')

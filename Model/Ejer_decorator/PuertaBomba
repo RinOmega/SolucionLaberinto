@@ -1,0 +1,28 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+
+from Puerta import Puerta
+
+class PuertaBomba(Puerta):
+    def __init__(self,abierta,lado1,lado2,activa):
+        self.abierta = abierta
+        self.lado1 = lado1
+        self.lado2 = lado2
+        self.activa = activa
+    
+    def abierta(self):
+        return self.abierta
+
+    def lado1(self):
+        return self.lado1
+
+
+    def lado2(self):
+        return self.lado2
+
+        
+    def entrar(self):
+       if self.activa:
+            print('La bomba de la puerta ha explotado')
+       else:
+            print('Puedes entrar')

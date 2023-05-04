@@ -1,0 +1,17 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+
+from ElementoMapa import ElementoMapa
+
+class Contenedor(ElementoMapa):
+    def __init__(self):
+        self.hijos = []
+        self.num=None
+        return self
+    
+    def agregarHijo(self, unEM):
+        unEM.padre=self
+        self.hijos.append(unEM)
+    
+    def entrar(self):
+        return print('Contenedor')

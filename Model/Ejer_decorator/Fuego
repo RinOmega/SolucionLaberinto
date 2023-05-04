@@ -1,0 +1,24 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+
+from Decorator import Decorator
+
+class Fuego(Decorator):
+    def __init__(self):
+        #activo es un atributo que dice si el fuego está encendido o apagado
+        self.activo=False
+    
+    def entrar(self):
+        if self.activo:
+            print('El fuego está activo (hay llamas)')
+        else:
+            #Preguntar --> delega en EM al que decora, puede ser nil
+            self.component.entrar(self)
+
+    def encenderFuego(self):
+        self.activo=True
+        print('El fuego ha sido encendido')
+    
+    def apagarFuego(self):
+        self.activo=False
+        print('El fuego ha sido extinguido')
