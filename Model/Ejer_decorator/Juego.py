@@ -2,14 +2,13 @@
 #-*- coding: utf-8 -*-
 
 from Habitacion import Habitacion
-from HabitacionFuego import HabitacionFuego
-from PuertaBomba import PuertaBomba
 from Puerta import Puerta
 from Pared import Pared
 from Laberinto import Laberinto
 from Baul import Baul
 from Espada import Espada
 from Bomba import Bomba
+from Fuego import Fuego
 
 class Juego:
     
@@ -44,17 +43,9 @@ class Juego:
     def fabricarHabitacion(self, unNum):
         hab = Habitacion(unNum)
         return hab
-    
-    def fabricarHabitacionFuego(self, unNum,activo):
-        hab = HabitacionFuego(unNum,activo)
-        return hab
 
     def fabricarPuertaLado1Lado2(self,abierta, unaHab, otraHab):
         puerta = Puerta(abierta,lado1=unaHab,lado2=otraHab)
-        return puerta
-    
-    def fabricarPuertaBombaLado1Lado2(self,abierta, unaHab, otraHab,activa):
-        puerta = PuertaBomba(abierta,lado1=unaHab,lado2=otraHab,activa)
         return puerta
 
     def fabricarPared(self):
@@ -81,15 +72,17 @@ class Juego:
         hab1 = self.fabricarHabitacion(1)
         hab2 = self.fabricarHabitacion(2)
         hab3 = self.fabricarHabitacion(3)
-        activo=True
-        hab4 = self.fabricarHabitacionFuego(4,activo)
+        hab4 = self.fabricarHabitacion(4)
+        fuego = Fuego()
+        fuego.decorar(hab4)
 
         puerta1 = self.fabricarPuertaLado1Lado2(abierta,hab1, hab2)
         puerta4 = self.fabricarPuertaLado1Lado2(abierta2,hab1, hab3)
         puerta2 = self.fabricarPuertaLado1Lado2(abierta,hab2, hab4)
-        activa=True
-        puerta3 = self.fabricarPuertaBombaLado1Lado2(abierta,hab3, hab4,activa)
-
+        bombaP=Bomba()
+        puerta3 = self.fabricarPuertaLado1Lado2(abierta,hab3, hab4)
+        bombaP.decorar(puerta3)
+        
         hab1.norte = self.fabricarPared()
         hab1.oeste = self.fabricarPared()
         hab1.sur = puerta4

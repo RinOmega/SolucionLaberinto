@@ -13,6 +13,10 @@ class Bomba(Decorator):
         else:
             #Preguntar
             self.component.entrar(self)
+    
+    def decorar(self,unEM):
+        super.decorar(unEM)
+        self.activa=True
 
     def activar(self):
         self.activa=True

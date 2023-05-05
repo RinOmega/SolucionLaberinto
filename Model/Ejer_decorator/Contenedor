@@ -9,6 +9,9 @@ class Contenedor(ElementoMapa):
         self.num=None
         return self
     
+    def obtenerHijo(self,pos):
+        return self.hijos.index(pos)
+
     def agregarHijo(self, unEM):
         unEM.padre=self
         self.hijos.append(unEM)

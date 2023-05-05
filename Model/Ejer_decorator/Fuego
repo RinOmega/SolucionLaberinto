@@ -14,6 +14,10 @@ class Fuego(Decorator):
         else:
             #Preguntar --> delega en EM al que decora, puede ser nil
             self.component.entrar(self)
+    
+    def decorar(self,unEM):
+        super.decorar(unEM)
+        self.activo=True
 
     def encenderFuego(self):
         self.activo=True
