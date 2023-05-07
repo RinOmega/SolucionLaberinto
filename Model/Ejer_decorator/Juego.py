@@ -61,8 +61,8 @@ class Juego:
         cont.agregarHijo(espada)
     
     def fabricarBombaEn(self,cont):
-        espada = Bomba()
-        cont.agregarHijo(espada)
+        bomba = Bomba()
+        cont.agregarHijo(bomba)
     
     def laberinto4Habitaciones(self):
         self.laberinto = self.fabricarLaberinto()
